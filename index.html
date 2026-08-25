@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Cadastros - Cesta Básica Aliança</title>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="config.js"></script>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header>
+  <h1>Painel de Cadastros - Cesta Básica Aliança</h1>
+  <div id="areaUsuario"></div>
+</header>
+
+<main>
+
+  <div id="tela-login">
+    <h2>Entre para ver os cadastros</h2>
+    <p>Esse painel mostra os cadastros recebidos pelo site. Só quem tiver uma conta Google autorizada consegue ver os dados aqui.</p>
+    <button id="btnEntrar">Entrar com Google</button>
+    <div id="tela-negado">Essa conta Google não tem permissão para ver este painel. Fale com quem administra o site.</div>
+  </div>
+
+  <div id="conteudo-painel">
+    <div class="cards" id="cardsResumo"></div>
+
+    <section class="panel">
+      <h2>Cadastros Recebidos</h2>
+      <p class="aviso-score">
+        O selo "Confiança" é uma estimativa calculada só com os dados preenchidos no cadastro
+        (CPF válido, renda, moradia própria/financiada, veículo, endereço e telefone) — não é uma
+        checagem de crédito real. Passe o mouse no selo pra ver o que pesou na conta.
+      </p>
+      <div class="filtro-status" id="filtroStatus">
+        <button class="filtro-status-btn ativo" data-status="Todos">Todos</button>
+        <button class="filtro-status-btn" data-status="Pendente">Pendentes</button>
+        <button class="filtro-status-btn" data-status="Aprovado">Aprovados</button>
+        <button class="filtro-status-btn" data-status="Recusado">Recusados</button>
+      </div>
+      <div class="toolbar">
+        <input type="text" id="busca" placeholder="Buscar por nome, cidade, bairro...">
+        <span class="pill" id="contagem"></span>
+        <button id="btnAtualizar">Atualizar</button>
+      </div>
+      <div id="listaCadastros"></div>
+    </section>
+  </div>
+
+</main>
+
+<footer>Painel privado — acessível de qualquer dispositivo, mas só com login de uma conta Google autorizada.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
